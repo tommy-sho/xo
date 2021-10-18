@@ -3,13 +3,13 @@ package main
 import (
 	"flag"
 	"fmt"
+	"github.com/xo/xo/loaders"
 	"log"
 	"time"
 
 	_ "github.com/mattn/go-sqlite3"
 
 	"github.com/xo/dburl"
-	"github.com/xo/xoutil"
 
 	"github.com/xo/xo/examples/booktest/sqlite3/models"
 )
@@ -52,7 +52,7 @@ func main() {
 	}
 
 	// save first book
-	now := xoutil.SqTime{time.Now()}
+	now := loaders.SqTime{time.Now()}
 	b0 := models.Book{
 		AuthorID:  a.AuthorID,
 		Isbn:      "1",
